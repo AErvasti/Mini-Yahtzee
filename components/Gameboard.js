@@ -178,7 +178,7 @@ export default function Gameboard() {
         <Text style={styles.buttonText}>
           {!gameOver()
             ? 'Throw dices'
-            : `Throw dices (New game)`
+            : 'New Game'
           }
         </Text>
       </Pressable>
