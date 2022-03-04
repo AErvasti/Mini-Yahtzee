@@ -21,38 +21,38 @@ export default function Gameboard() {
     useState(new Array(NBR_OF_DICE_FACES).fill(0));
 
   const SpotCountButtons = [];
-    for (let i = 0; i < 6; i++ ) {
-      SpotCountButtons.push(
-        <View style={styles.gameboard}
-          key={i}>
-          <Text style={{marginTop: 5}}>{dotSums[i]}</Text>
-          <Pressable
-            style={styles.item}
-            onPress={() => selectSpot(i)}>
-            <MaterialCommunityIcons
-              name={'numeric-' + (i+1) + '-circle'}
-              size={50}
-              color={getSpotColor(i)}>
-            </MaterialCommunityIcons>
-          </Pressable>
-        </View>
-      )
+  for (let i = 0; i < 6; i++ ) {
+    SpotCountButtons.push(
+      <View style={styles.gameboard}
+        key={i}>
+        <Text style={{marginTop: 5}}>{dotSums[i]}</Text>
+        <Pressable
+          style={styles.item}
+          onPress={() => selectSpot(i)}>
+          <MaterialCommunityIcons
+            name={'numeric-' + (i+1) + '-circle'}
+            size={50}
+            color={getSpotColor(i)}>
+          </MaterialCommunityIcons>
+        </Pressable>
+      </View>
+    )
   }
 
   const DicesRow = [];
-    for (let i = 0; i < NBR_OF_DICES; i++) {
-      DicesRow.push(
-        <Pressable
-          key={'row' + i}
-          onPress={() => selectDice(i)}>
-            <MaterialCommunityIcons
-              name={board[i]}
-              key={'row' + i}
-              size={60}
-              color={getDiceColor(i)}>
-            </MaterialCommunityIcons>
-          </Pressable>
-      );
+  for (let i = 0; i < NBR_OF_DICES; i++) {
+    DicesRow.push(
+      <Pressable
+        key={'row' + i}
+        onPress={() => selectDice(i)}>
+          <MaterialCommunityIcons
+            name={board[i]}
+            key={'row' + i}
+            size={60}
+            color={getDiceColor(i)}>
+          </MaterialCommunityIcons>
+        </Pressable>
+    );
   }
 
   function newGame() {
